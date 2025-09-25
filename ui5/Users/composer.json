@@ -1,0 +1,11 @@
+{
+    "name": "pragmatiqu/users",
+    "description": "Ui5App generated via ui5:sca",
+    "autoload": {
+        "psr-4": {
+            "Pragmatiqu\\Users": "src/"
+        }
+    },
+    "require": {
+    }
+}

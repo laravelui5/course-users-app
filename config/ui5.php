@@ -92,6 +92,7 @@ return [
         'core' => \LaravelUi5\Core\CoreModule::class,
         'dashboard' => \LaravelUi5\Core\DashboardModule::class,
         'report' => \LaravelUi5\Core\ReportModule::class,
+        'users' => \Pragmatiqu\Users\UsersModule::class,
     ],
 
     /*
