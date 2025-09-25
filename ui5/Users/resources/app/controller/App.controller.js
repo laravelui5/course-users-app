@@ -20,6 +20,14 @@ sap.ui.define([
                 }));
             }
             binding.filter(filters);
+        },
+
+        onUserSelect: function (event) {
+            const item = event.getParameter("listItem");
+            const context = item.getBindingContext();
+            const detailPage = this.byId("detailPage");
+            detailPage.setBindingContext(context);
+            this.byId("app").to(detailPage);
         }
     });
 });

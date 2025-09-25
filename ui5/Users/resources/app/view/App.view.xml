@@ -21,23 +21,36 @@
                         id="usersList"
                         items="{/Users}"
                         mode="SingleSelectMaster"
+                        selectionChange=".onUserSelect"
                     >
-                    <StandardListItem
-                        title="{name}"
-                        description="{email}"
+                        <StandardListItem
+                            title="{name}"
+                            description="{email}"
                         />
                     </List>
                 </content>
             </Page>
         </masterPages>
         <detailPages>
-            <Page title="{i18n>appTitle}">
+            <Page id="welcome" title="{i18n>appTitle}">
                 <content>
                     <IllustratedMessage
                         description="You've successfully setup your LaravelUi5 App"
                         enableVerticalResponsiveness="true"
                         illustrationType="sapIllus-Achievement"
                     />
+                </content>
+            </Page>
+            <Page
+                id="detailPage"
+                title="User Details"
+            >
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <Text text="{name}"/>
+                        <Text text="{email}"/>
+                        <Text text="{created_at}"/>
+                    </VBox>
                 </content>
             </Page>
         </detailPages>
