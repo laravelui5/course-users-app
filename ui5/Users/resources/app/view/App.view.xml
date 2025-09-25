@@ -4,15 +4,33 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
 >
-    <App id="app">
-        <Page title="{i18n>appTitle}">
-            <content>
-                <IllustratedMessage
-                    description="You've successfully setup your LaravelUi5 App"
-                    enableVerticalResponsiveness="true"
-                    illustrationType="sapIllus-Achievement"
-                />
-            </content>
-        </Page>
-    </App>
+    <SplitApp id="app">
+        <masterPages>
+            <Page title="Users">
+                <content>
+                    <List
+                        id="usersList"
+                        items="{/Users}"
+                        mode="SingleSelectMaster"
+                    >
+                    <StandardListItem
+                        title="{name}"
+                        description="{email}"
+                        />
+                    </List>
+                </content>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <Page title="{i18n>appTitle}">
+                <content>
+                    <IllustratedMessage
+                        description="You've successfully setup your LaravelUi5 App"
+                        enableVerticalResponsiveness="true"
+                        illustrationType="sapIllus-Achievement"
+                    />
+                </content>
+            </Page>
+        </detailPages>
+    </SplitApp>
 </mvc:View>
