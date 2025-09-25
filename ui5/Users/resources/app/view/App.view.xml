@@ -7,6 +7,15 @@
     <SplitApp id="app">
         <masterPages>
             <Page title="Users">
+                <subHeader>
+                    <Toolbar>
+                        <SearchField
+                            width="100%"
+                            placeholder="Search users..."
+                            liveChange=".onSearch"
+                        />
+                    </Toolbar>
+                </subHeader>
                 <content>
                     <List
                         id="usersList"
