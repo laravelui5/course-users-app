@@ -2,17 +2,21 @@
 
 namespace Pragmatiqu\Users;
 
+use App\Models\User;
+use Flat3\Lodata\Endpoint;
+use Flat3\Lodata\Model;
 use Illuminate\Support\Facades\File;
 use LaravelUi5\Core\Ui5\Contracts\LaravelUi5ManifestInterface;
 use LaravelUi5\Core\Ui5\Contracts\Ui5AppInterface;
 use LaravelUi5\Core\Ui5\Contracts\Ui5ModuleInterface;
 use LaravelUi5\Core\Enums\ArtifactType;
 
-class UsersApp implements Ui5AppInterface
+class UsersApp extends Endpoint implements Ui5AppInterface
 {
 
     public function __construct(protected Ui5ModuleInterface $module)
     {
+        parent::__construct($module->getSlug());
     }
 
     public function getModule(): ?Ui5ModuleInterface
@@ -114,5 +118,10 @@ JS;
     public function getVendor(): string
     {
         return 'Vendor not supplied';
+    }
+
+    public function discover(Model $model): Model
+    {
+        return $model->discover(User::class);
     }
 }
