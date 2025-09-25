@@ -44,11 +44,6 @@ class UsersModule extends Ui5Module
         return [];
     }
 
-    public function getReports(): array
-    {
-        return [];
-    }
-
     public function getTiles(): array
     {
         return [];
@@ -56,7 +51,9 @@ class UsersModule extends Ui5Module
 
     public function getActions(): array
     {
-        return [];
+        return [
+            new Actions\ToggleLock\Action($this),
+        ];
     }
 
     public function getResources(): array
